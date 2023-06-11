@@ -19,10 +19,10 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
+            <Route path="/" element={<SearchBooks />} />
             {/* TODO: route paths!!! */}
 
             {/* <Route path="/" element={<Home />} />
-            <Route path="/matchup" element={<Matchup />} />
             <Route path="/matchup/:id" element={<Vote />} />
             */}
           </Routes>
