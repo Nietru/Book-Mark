@@ -33,7 +33,6 @@ const typeDefs = gql`
       createReview(reviewText: String!): Review
       login(email: String!, password: String!): Auth
       removeReview(reviewId: ID!): Review
-      # updateUser(username: String!, email: String!, password: String!): User
       updateReview(reviewId: ID!, reviewText: String!): Review
     }`;
 
