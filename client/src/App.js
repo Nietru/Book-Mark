@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import LoginForm from "./components/LoginForm";
 
 // TODO: import pages once created!!!
 
@@ -19,11 +20,10 @@ function App() {
       <Router>
         <div className="flex-column justify-center align-center min-100-vh bg-primary">
           <Routes>
-            <Route path="/" element={<SearchBooks />} />
-            {/* TODO: route paths!!! */}
-
             {/* <Route path="/" element={<Home />} />
-            <Route path="/matchup/:id" element={<Vote />} />
+            <Route path="/user/:id" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
             */}
           </Routes>
         </div>
