@@ -3,18 +3,20 @@ const { ApolloServer } = require("apollo-server-express");
 const path = require("path");
 // JSON web token:
 const { authMiddleware } = require("./utils/auth");
+const db = require("./config/connection");
 
 // Uncomment the following code once you have built the queries and mutations in the client folder
 const { typeDefs, resolvers } = require("./schemas");
 
 const PORT = process.env.PORT || 3001;
-const app = express();
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: authMiddleware,
 });
+
+const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
