@@ -5,7 +5,7 @@ const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 
 // Uncomment the following code once you have built the queries and mutations in the client folder
-// const { typeDefs, resolvers } = require('./schemas');
+const { typeDefs, resolvers } = require("./schemas");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
