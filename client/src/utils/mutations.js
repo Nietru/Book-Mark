@@ -23,3 +23,20 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const CREATE_REVIEW = gql`
+  mutation createReview($reviewText: String!) {
+    createReview(reviewText: $reviewText) {
+      _id
+      reviewText
+      reviewAuthor
+      createdAt
+      book {
+        _id
+        bookId
+        title
+        image
+      }
+    }
+  }
+`;
