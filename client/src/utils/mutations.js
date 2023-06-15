@@ -23,3 +23,13 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const ADD_DONATION = gql`
+  mutation addDonation($products: [ID]!) {
+      purchaseDate
+      donation {
+        _id
+        amount
+      }
+    }
+`;

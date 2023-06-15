@@ -5,6 +5,8 @@ const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 const db = require("./config/connection");
 
+require('dontenv').config()
+
 // Uncomment the following code once you have built the queries and mutations in the client folder
 const { typeDefs, resolvers } = require("./schemas");
 
@@ -44,3 +46,5 @@ const startApolloServer = async () => {
   });
 };
 startApolloServer();
+
+const stripe = reqire('stripe')(process.env.STRIPE_PRIVATE_KEY)
