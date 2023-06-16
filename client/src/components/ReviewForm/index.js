@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
 import { CREATE_REVIEW } from "../../utils/mutations";
-import { QUERY_REVIEWS } from "../../utils/reviews";
+import { QUERY_REVIEWS } from "../../utils/queries";
 
 const ReviewForm = () => {
   const [formState, setFormState] = useState({
@@ -15,7 +16,6 @@ const ReviewForm = () => {
     update(cache, { data: { createReview } }) {
       try {
         const { reviews } = cache.readQuery({ query: QUERY_REVIEWS });
-
         cache.writeQuery({
           query: QUERY_REVIEWS,
           data: { reviews: [createReview, ...reviews] },

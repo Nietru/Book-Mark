@@ -18,7 +18,8 @@ function Login(props) {
         },
       });
       const token = mutationResponse.data.login.token;
-      Auth.login(token);
+      const user = mutationResponse.data.login.user._id;
+      Auth.login(token, user);
     } catch (e) {
       console.log(e);
     }
@@ -39,12 +40,12 @@ function Login(props) {
       <h2>Login</h2>
       <form onSubmit={handleFormSubmit}>
         <div className="flex-row space-between my-2">
-          <label htmlFor="userName">Username:</label>
+          <label htmlFor="username">Username:</label>
           <input
             placeholder="Your username"
-            name="userName"
-            type="userName"
-            id="userName"
+            name="username"
+            type="text"
+            id="username"
             onChange={handleChange}
           />
         </div>

@@ -16,6 +16,9 @@ const resolvers = {
     review: async (parent, { reviewId }) => {
       return Review.findOne({ reviewId });
     },
+    reviews: async () => {
+      return Review.find().sort({ createdAt: -1 });
+    },
   },
   Mutation: {
     addUser: async (parent, { username, email, password }) => {

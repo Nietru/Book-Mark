@@ -1,13 +1,13 @@
 import React from "react";
-// import { useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
 
-import ReviewList from "../components/ReviewList/index.js";
-// import ReviewForm from '../components/ReviewForm';
+import ReviewList from "../components/ReviewList";
+import ReviewForm from "../components/ReviewForm";
 
-// import { QUERY_REVIEWS } from '../utils/queries';
+import { QUERY_REVIEWS } from "../utils/queries";
 
 const Profile = () => {
-  //   const { loading, data } = useQuery(QUERY_THOUGHTS);
+  const { loading, data } = useQuery(QUERY_REVIEWS);
   const reviews = data?.reviews || [];
 
   return (
