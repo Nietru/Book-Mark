@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
-import Profile from "../pages/Profile";
+// import Profile from "../pages/Profile";
 
 import Auth from "../utils/auth";
 
