@@ -6,6 +6,10 @@ import SearchBooks from "./pages/SearchBooks";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import SignUp from "./pages/SignUp";
+import Footer from "./components/Footer";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.css";
 
 const client = new ApolloClient({
   uri: "/graphql",
@@ -26,6 +30,7 @@ function App() {
               <Route path="/searchBooks" element={<SearchBooks />} />
             </Routes>
           </div>
+          <Footer></Footer>
         </>
       </Router>
     </ApolloProvider>

@@ -1,9 +1,10 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+  background-color: rgb(14, 1, 1);
 }
 
 /* body .container {
@@ -134,19 +135,24 @@ p {
   font-size: smaller;
 }
 
-footer .foot-links {
+.footer .container-fluid {
   display: flex;
   border-top: 2px solid white;
   justify-content: center;
 }
 
-.foot-links a {
+.foot-link a {
+  font-weight: bold;
+  font-size: 25px;
+  padding: 10px;
+  justify-content: center;
   color: rgb(247, 183, 9);
 }
 
-.foot-links a:hover {
+.foot-link a:hover {
   color: teal;
 }
+*/
 
 /*media queries*/
 
