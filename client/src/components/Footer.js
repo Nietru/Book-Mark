@@ -14,7 +14,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Github Repo
+          Github
         </a>
       </div>
     </>
