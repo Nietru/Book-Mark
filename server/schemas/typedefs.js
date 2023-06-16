@@ -33,6 +33,7 @@ const typeDefs = gql`
     me: User
     user(userId: ID!): User
     review(reviewId: ID!): Review
+    reviews: [Review]
   }
 
   type Mutation {
