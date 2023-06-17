@@ -2,7 +2,7 @@
 // TODO: add App Title
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
+import "../index.css";
 
 export default function Header() {
   return (
