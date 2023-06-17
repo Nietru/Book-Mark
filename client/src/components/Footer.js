@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <>
       {/* // TODO: ADD STRIPE CHARITABLE DONATIONS: */}
-      <div className="foot-link col-md-4">
+      <div className="foot-link col-md-4 text-center">
         <a
           href="https://github.com/Nietru/Book-Mark"
           target="_blank"

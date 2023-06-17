@@ -15,11 +15,13 @@ A responsive application, built utilizing the MERN stack, for book lovers to wri
 
 ## User Story
 
+```
 AS AN avid reader
 I WANT to search for books I have read
 SO THAT I can write a review with my thoughts on the content
 I WANT there to be a record of the books I have reviewed
 SO THAT I can login and review my reviews
+```
 
 ## Technologies Used
 

@@ -14,7 +14,7 @@ import AppNavbar from "./components/Navbar";
 // import SearchBooks from "./pages/SearchBooks";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
-// import SignUp from "./pages/SignUp";
+import SignUp from "./pages/SignUp";
 import Footer from "./components/Footer";
 
 // Construct our main GraphQL API endpoint
@@ -52,8 +52,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/user/:id" element={<Profile />} />
-              {/* <Route path="/signUp" element={<SignUp />} />
-              <Route path="/searchBooks" element={<SearchBooks />} /> */}
+              <Route path="/signUp" element={<SignUp />} />
+              {/* <Route path="/searchBooks" element={<SearchBooks />} /> */}
             </Routes>
           </div>
           <Footer></Footer>
