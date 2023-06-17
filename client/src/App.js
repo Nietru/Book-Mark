@@ -8,7 +8,7 @@ import {
 } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./index.css";
 import Header from "./components/Header";
 import AppNavbar from "./components/Navbar";
 // import SearchBooks from "./pages/SearchBooks";
