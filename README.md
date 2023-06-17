@@ -23,10 +23,17 @@ SO THAT I can login and review my reviews
 
 ## Technologies Used
 
+See package.json for list of dependencies: client directory(front-end react), server directory(backend apollo).
+
 ## Screen Capture
 
 ![Picture of the Heroku deployed web application Book Mark](./images/Capture1.PNG?raw=true)
 
 ## Deployment
 
+https://morning-refuge-05693-8548eae169a5.herokuapp.com/
+
 ## Contributors
+
+Tifannie Truman - https://github.com/Nietru
+Ryan Bernier - https://github.com/Frostysnacks
