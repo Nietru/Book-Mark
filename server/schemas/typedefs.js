@@ -24,6 +24,12 @@ const typeDefs = gql`
     book: Book
   }
 
+  input BookInput {
+    bookId: String
+    title: String
+    image: String
+  }
+
   type Auth {
     token: ID
     user: User
@@ -40,6 +46,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     createReview(reviewText: String!): Review
     login(username: String!, password: String!): Auth
+    saveBook(bookData: BookInput!): User
     # removeReview(reviewId: ID!): Review
     # updateReview(reviewId: ID!, reviewText: String!): Review
   }
