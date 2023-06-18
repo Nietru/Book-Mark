@@ -4,8 +4,10 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_REVIEWS } from "../utils/queries";
 import { SAVE_BOOK } from "../utils/mutations";
 import auth from "../utils/auth";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
-const Profile = () => {
+const Home = () => {
   const [searchInput, setSearchInput] = useState("");
   const [searchedBooks, setSearchedBooks] = useState([]);
   const { loading, data } = useQuery(QUERY_REVIEWS);
@@ -72,7 +74,7 @@ const Profile = () => {
   };
   return (
     <main>
-      <div className="flex-row justify-center">
+      <div className="flex-row justify-center home">
         <div className="searchInput">
           <form className="searchForm" onSubmit={handleFormSubmit}>
             <input
@@ -120,4 +122,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Home;
