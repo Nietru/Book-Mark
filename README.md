@@ -9,17 +9,19 @@ A responsive application, built utilizing the MERN stack, for book lovers to wri
 
 ## Installation
 
-[npm install]
-[npm run build]
-[npm run develop]
+Local environment
+
+- [npm install]
+- [npm run build]
+- [npm run develop]
 
 ## User Story
 
-AS AN avid reader
-I WANT to search for books I have read
-SO THAT I can write a review with my thoughts on the content
-I WANT there to be a record of the books I have reviewed
-SO THAT I can login and review my reviews
+- AS AN avid reader
+- I WANT to search for books I have read
+- SO THAT I can write a review with my thoughts on the content
+- I WANT there to be a record of the books I have reviewed
+- SO THAT I can login and review my reviews
 
 ## Technologies Used
 
@@ -35,5 +37,5 @@ https://morning-refuge-05693-8548eae169a5.herokuapp.com/
 
 ## Contributors
 
-Tifannie Truman - https://github.com/Nietru
-Ryan Bernier - https://github.com/Frostysnacks
+- Tifannie Truman - https://github.com/Nietru
+- Ryan Bernier - https://github.com/Frostysnacks

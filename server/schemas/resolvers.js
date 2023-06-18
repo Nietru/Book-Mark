@@ -1,4 +1,4 @@
-const { User, Review } = require("../models"); // import the models
+const { User, Review, Book } = require("../models"); // import the models
 const { AuthenticationError } = require("apollo-server-express"); // import the apollo-server errors
 const { signToken } = require("../utils/auth"); // import the signToken function from the auth.js file
 
@@ -51,6 +51,17 @@ const resolvers = {
       }
       const token = signToken(user); // create a token for the user
       return { token, user }; // return the token and user
+    },
+    saveBook: async (parent, { bookData }, context) => {
+      let book = await Book.findOne({ bookId: bookData.bookId }); // find the book by bookId
+      if (!book) {
+        book = await Book.create(bookData); // create a new book
+      }
+      await User.findOneAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { savedBooks: book._id } }
+      ); // add the book to the user's savedBooks array field
+      return User.findOne({ _id: context.user._id }).populate("savedBooks"); // return the user's savedBooks array field
     },
   },
 };

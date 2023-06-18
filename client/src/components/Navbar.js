@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
-// import Profile from "../pages/Profile";
+import Profile from "../pages/Profile";
 
 import Auth from "../utils/auth";
 
@@ -19,7 +19,7 @@ const AppNavbar = () => {
       <Navbar bg="dark" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbar" />
-          <Nav className="ml-auto d-flex">
+          <Nav className="ml-auto d-flex nav-links">
             {/* if user is logged in show saved books and logout */}
             {Auth.loggedIn() ? (
               <>
@@ -27,6 +27,12 @@ const AppNavbar = () => {
                   See Your Reviews!
                 </Nav.Link>
                 <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                <Nav.Link as={Link} to="/">
+                  Home
+                </Nav.Link>
+                <Nav.Link as={Link} to="/profile">
+                  Profile
+                </Nav.Link>
               </>
             ) : (
               <Nav.Link onClick={() => setShowModal(true)}></Nav.Link>

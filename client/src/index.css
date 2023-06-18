@@ -22,6 +22,12 @@
   color: white;
 }
 
+.home a {
+  display: flex;
+  color: white;
+  font-size: smaller;
+}
+
 h2 {
   color: rgb(247, 183, 9);
 }

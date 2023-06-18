@@ -20,6 +20,12 @@ const userSchema = new Schema({
     required: true,
     minLength: 5,
   },
+  savedBooks: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
   reviews: [
     {
       type: Schema.Types.ObjectId,
