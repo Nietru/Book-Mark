@@ -73,6 +73,19 @@ const Home = () => {
       console.error(err);
     }
   };
+
+  const [activeBtn, setActiveBtn] = useState("");
+
+  const handleBtnClick = (currentBtn) => {
+    if (currentBtn === activeBtn) {
+      setActiveBtn("");
+    } else if (!activeBtn) {
+      setActiveBtn(currentBtn);
+    } else {
+      setActiveBtn(currentBtn);
+    }
+  };
+
   return (
     <main>
       <div className="flex-row justify-center home">
@@ -112,10 +125,16 @@ const Home = () => {
                     >
                       Save this Book!
                     </button>
- 
+                  
 
                   )}
-                  <ReviewForm bookId={book.bookId} /> 
+                  {auth.loggedIn() && (
+                  <button style={{margin:5}} onClick={() => handleBtnClick(book.bookId)}>Write a Review</button>
+                 )
+                 }{activeBtn === book && (
+                  <ReviewForm bookId={book.bookId} />
+                  )} 
+              
                 </div>
               );
             })}
