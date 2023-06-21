@@ -6,6 +6,7 @@ import { SAVE_BOOK } from "../utils/mutations";
 import auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import ReviewForm from "../components/ReviewForm";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -111,7 +112,10 @@ const Home = () => {
                     >
                       Save this Book!
                     </button>
+ 
+
                   )}
+                  <ReviewForm bookId={book.bookId} /> 
                 </div>
               );
             })}
