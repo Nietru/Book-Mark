@@ -6,6 +6,7 @@ import { SAVE_BOOK } from "../utils/mutations";
 import auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import ReviewForm from "../components/ReviewForm";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -72,6 +73,19 @@ const Home = () => {
       console.error(err);
     }
   };
+
+  const [activeBtn, setActiveBtn] = useState("");
+
+  const handleBtnClick = (currentBtn) => {
+    if (currentBtn === activeBtn) {
+      setActiveBtn("");
+    } else if (!activeBtn) {
+      setActiveBtn(currentBtn);
+    } else {
+      setActiveBtn(currentBtn);
+    }
+  };
+
   return (
     <main>
       <div className="flex-row justify-center home">
@@ -111,7 +125,16 @@ const Home = () => {
                     >
                       Save this Book!
                     </button>
+                  
+
                   )}
+                  {auth.loggedIn() && (
+                  <button style={{margin:5}} onClick={() => handleBtnClick(book.bookId)}>Write a Review</button>
+                 )
+                 }{activeBtn === book && (
+                  <ReviewForm bookId={book.bookId} />
+                  )} 
+              
                 </div>
               );
             })}

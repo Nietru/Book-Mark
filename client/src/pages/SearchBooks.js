@@ -47,7 +47,8 @@ const handleFormSubmit = async (event) => {
     } catch (err) {
         console.error(err);
     }
-};
+
+    
 
 
     return (
@@ -95,6 +96,7 @@ const handleFormSubmit = async (event) => {
                     <Card.Title>{book.title}</Card.Title>
                     <p className='small'>Authors: {book.authors}</p>
                     <Card.Text>{book.description}</Card.Text>
+                    
                 
                     </Card.Body>
                 </Card>
