@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useQuery, useMutation } from "@apollo/client";
 
-import { QUERY_REVIEWS } from "../utils/queries";
+import { QUERY_REVIEWS, GET_ME, GET_USER, GET_REVIEW } from "../utils/queries";
 import { SAVE_BOOK } from "../utils/mutations";
 import auth from "../utils/auth";
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import AppNavbar from "../components/Navbar";
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -74,6 +74,9 @@ const Home = () => {
   };
   return (
     <main>
+      <div>
+        <AppNavbar />
+      </div>
       <div className="flex-row justify-center home">
         <div className="searchInput">
           <form className="searchForm" onSubmit={handleFormSubmit}>

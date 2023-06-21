@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloClient,
@@ -48,7 +48,6 @@ function App() {
       <Router>
         <>
           <Header></Header>
-          <AppNavbar></AppNavbar>
           <div className="flex-column justify-center align-center min-100-vh bg-primary">
             <Routes>
               <Route path="/" element={<Home />} />

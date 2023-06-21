@@ -3,16 +3,32 @@
 // Put searchbooks in navbar
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../index.css";
 import { Navbar, Nav, Container, Modal, Tab } from "react-bootstrap";
 import SignUp from "../pages/SignUp";
 import Login from "../pages/Login";
-import Profile from "../pages/Profile";
 
 import Auth from "../utils/auth";
+function parseJwt(token) {
+  var base64Url = token.split(".")[1];
+  var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
+  var jsonPayload = decodeURIComponent(
+    window
+      .atob(base64)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+
+  return JSON.parse(jsonPayload);
+}
 
 const AppNavbar = () => {
   // set modal display state
   const [showModal, setShowModal] = useState(false);
+  const user = parseJwt(localStorage.getItem("id_token"));
 
   return (
     <>
@@ -30,7 +46,7 @@ const AppNavbar = () => {
                 <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/profile">
+                <Nav.Link as={Link} to={`/user/${user.data._id}`}>
                   Profile
                 </Nav.Link>
               </>
