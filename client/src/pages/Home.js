@@ -5,7 +5,12 @@ import { QUERY_REVIEWS, GET_ME, GET_USER, GET_REVIEW } from "../utils/queries";
 import { SAVE_BOOK } from "../utils/mutations";
 import auth from "../utils/auth";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 import AppNavbar from "../components/Navbar";
+=======
+import Navbar from "../components/Navbar";
+import ReviewForm from "../components/ReviewForm";
+>>>>>>> 1dfcd6bb1dfa64a1467c330cfcaa19bd5a584a88
 
 const Home = () => {
   const [searchInput, setSearchInput] = useState("");
@@ -72,6 +77,19 @@ const Home = () => {
       console.error(err);
     }
   };
+
+  const [activeBtn, setActiveBtn] = useState("");
+
+  const handleBtnClick = (currentBtn) => {
+    if (currentBtn === activeBtn) {
+      setActiveBtn("");
+    } else if (!activeBtn) {
+      setActiveBtn(currentBtn);
+    } else {
+      setActiveBtn(currentBtn);
+    }
+  };
+
   return (
     <main>
       <div>
@@ -114,7 +132,18 @@ const Home = () => {
                     >
                       Save this Book!
                     </button>
+                  
+
                   )}
+                  {auth.loggedIn() && (
+                  <div>
+                  <button style={{margin:5}} onClick={() => handleBtnClick(book.bookId)}>Write a Review</button>
+                  {activeBtn === book.bookId && (
+                  <ReviewForm bookId={book.bookId} />
+                  )}
+                  </div>
+                  )}
+             
                 </div>
               );
             })}
