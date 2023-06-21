@@ -16,7 +16,7 @@ const AppNavbar = () => {
 
   return (
     <>
-      <Navbar bg="dark" variant="dark" expand="lg">
+      <Navbar bg="dark" variant="dark" expand="lg" text="dark">
         <Container fluid>
           <Navbar.Toggle aria-controls="navbar" />
           <Nav className="ml-auto d-flex nav-links">

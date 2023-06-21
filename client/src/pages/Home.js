@@ -129,12 +129,14 @@ const Home = () => {
 
                   )}
                   {auth.loggedIn() && (
+                  <div>
                   <button style={{margin:5}} onClick={() => handleBtnClick(book.bookId)}>Write a Review</button>
-                 )
-                 }{activeBtn === book && (
+                  {activeBtn === book.bookId && (
                   <ReviewForm bookId={book.bookId} />
-                  )} 
-              
+                  )}
+                  </div>
+                  )}
+             
                 </div>
               );
             })}
